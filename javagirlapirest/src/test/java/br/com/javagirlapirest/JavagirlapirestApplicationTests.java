@@ -1,4 +1,4 @@
-package br.com.javagirlapirest.javagirlapirest;
+package br.com.javagirlapirest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
