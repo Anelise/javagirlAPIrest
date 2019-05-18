@@ -1,16 +1,26 @@
-package br.com.javagirlapirest.model;
+package br.com.javagirlapirest.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Contato {
 	
 	@Id
+	@JsonIgnore
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank(message = "Campo nome é obrigatório")
 	private String nome;
 	
+	@NotBlank(message = "Campo email é obrigatório")
 	private String email;
 	
 	private String telefone;
